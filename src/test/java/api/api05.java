@@ -3,7 +3,6 @@ package api;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static org.hamcrest.Matchers.*;
-import org.hamcrest.Matchers;
 import org.testng.annotations.Test;
 
 import static io.restassured.RestAssured.given;
@@ -36,11 +35,11 @@ public class api05 {
                 .assertThat()
                 .statusCode(200)
                 .contentType(ContentType.JSON)
-                .body("firstname", Matchers.equalTo("Sally"))
-                .body("lastname",Matchers.equalTo("Jones"))
-                .body("bookingdates.checkin",Matchers.equalTo("2020-05-28"))
-                .body("bookingdates.checkout",Matchers.equalTo("2020-11-29"));
+                .body("firstname",equalTo("Sally"),
+                "lastname",equalTo("Jones"),
+                "bookingdates.checkin",equalTo("2020-05-28"),
+               "bookingdates.checkout",equalTo("2020-11-29"));
 
-        // {}icine gireceksen ismini yazip . yapip giriyoruz.
+
     }
 }

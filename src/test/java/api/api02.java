@@ -15,7 +15,7 @@ public class api02 {
 
         response.then().assertThat().statusCode(200).contentType(ContentType.JSON);
 
-        // istediginiz kadar test annotion kullnabiliriz.
+
     }
 
     @Test
@@ -23,8 +23,8 @@ public class api02 {
 // negative
         Response response = given().when().get("https://restful-booker.herokuapp.com/booking/1001");
         response.then().assertThat().statusCode(404);
-        Assert.assertTrue(response.asString().contains("Not Found"));  // validate ettik.
+        Assert.assertTrue(response.asString().contains("Not Found"));
         Assert.assertFalse(response.asString().contains("Mali"));
-        // false false olunca zaten true olcak. o yuzden geciyor.
+
     }
 }
